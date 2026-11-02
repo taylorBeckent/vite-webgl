@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--
+      HTML-in-Canvas Origin Trial（canvasui 的 Peel / Liquid / Ripple 依赖此实验特性）
+      ---------------------------------------------------------------------------
+      作用：让稳定版 Chrome 对「你的正式域名」开启 drawElementImage / requestPaint /
+            layoutsubtree，从而渲染出 peel 揭开效果；否则组件走降级（只显示普通内容）。
+
+      生效范围：Chrome 148–154（以官方试用页为准），且仅对「已注册并注入 token 的源」生效。
+
+      申请步骤：
+        1. 打开 https://developer.chrome.com/origintrials/
+        2. 用 Google 账号登录，找到并注册 "HTML-in-Canvas" 试用
+        3. Web Origin 填写你的公开 HTTPS 域名（例如 https://your-domain.com）
+        4. 复制生成的 token，粘贴到下面 <meta> 的 content="" 中，并取消该行注释
+
+      ⚠️ 本地开发（localhost）无法使用 token：Origin Trial 不为 localhost 签发。
+         本地请用 Chrome Canary/Beta 打开 chrome://flags/#canvas-draw-element 设为
+         Enabled 后重启，即可在 localhost 看到效果（详见项目说明）。
+
+      也可改用 HTTP 响应头下发（二选一即可，不要重复）：
+        Origin-Trial: <你的 token>
+    -->
+    <!-- <meta http-equiv="origin-trial" content="在此粘贴你的 HTML-in-Canvas Origin Trial token" /> -->
+
+    <title>vite-project</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
