@@ -18,7 +18,6 @@ const Home = () => {
         return () => window.removeEventListener('message', raw);
     }, []);
 
-
     interface Person {
         loginName: string,
         name: string
@@ -26,7 +25,7 @@ const Home = () => {
 
     const autoTestJump = (record: Person) => {
         const params = { ...record, type: 'SSO_PARAMS' };
-        const AUTOTEST_URI = `http://192.168.213.59:8000`;
+        const AUTOTEST_URI = `http://192.168.249.59:8000`;
         const autoTestWindow: Window | null = window.open(AUTOTEST_URI, '_blank');
         console.log("params", params);
         console.log("autoTestWindow", autoTestWindow);
